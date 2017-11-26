@@ -171,7 +171,7 @@ def handle_message(event):
     if ''.join(event.message.text).find("公車資訊") != -1:  
         asr =[]    
         profile = line_bot_api.get_profile(event.source.user_id)
-        asr.append(TextSendMessage(text ="您好"+profile.display_name+"\r\n請您輸入地點或是輸入「公車 查詢站點」 謝謝"))
+        asr.append(TextSendMessage(text ="您好"+profile.display_name+"\r\n請您輸入輸入「公車 查詢站點」例如:公車 曙光女中 \r\n謝謝"))
         line_bot_api.reply_message(event.reply_token, asr)
         return 0  
         
